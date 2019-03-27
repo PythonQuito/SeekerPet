@@ -1,0 +1,49 @@
+{% extends 'home.html'%}
+
+{% block content %}
+<div class="row">
+    <div class="row">
+        <div style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 5px;">
+            <form class="col s12" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.nombre }}
+                        <label for="id_nombre">Nombre</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.descripcion }}
+                        <label for="id_descripcion">Descripcion</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.imagen }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.lugar_perdida }}
+                        <label for="id_lugar_perdida">Lugar perdida</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.fecha_perdida }}
+                        <label for="id_fecha_perdida">Fecha perdida</label>
+                    </div>
+                </div>
+
+                <a class="btn waves-effect light-blue" href="{% url 'mascotas:listade_mascotas' %}">Cancelar</a>
+
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

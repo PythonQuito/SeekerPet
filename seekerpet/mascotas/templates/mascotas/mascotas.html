@@ -2,6 +2,14 @@
 {% load staticfiles %}
 {% block content %}
 
+<div class="row" style="margin-top: 5px">
+    <div class="col s12" style="text-align: right">
+
+        <a class="waves-effect waves-light btn-small" href="{% url 'mascotas:crear_mascota' %}">Perdi mi mascota</a>
+
+    </div>
+</div>
+
 <div class="row">
     {% for mascota in object_list %}
     <div class="col s12 m3">
