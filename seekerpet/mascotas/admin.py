@@ -1,3 +1,6 @@
 from django.contrib import admin
+from seekerpet.mascotas import models
 
-# Register your models here.
+
+admin.site.register(models.Estado)
+admin.site.register(models.Mascota)
