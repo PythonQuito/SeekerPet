@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="row">
+    {% for mascota in object_list %}
+    <div class="col s12 m3">
+        <div class="card small">
+            <div class="card-image">
+                <img src="/media/{{ mascota.imagen }}" style="max-height: 300px" alt="{{ mascota.nombre }}">
+                <span class="card-title">{{ mascota.nombre }}</span>
+            </div>
+            <div class="card-action">
+                <a href="#">{{ mascota.nombre }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
