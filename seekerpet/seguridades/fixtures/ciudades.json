@@ -1,0 +1,10 @@
+[
+    {
+      "model": "seguridades.ciudad",
+      "pk": 1,
+      "fields": {
+        "codigo": "0001",
+        "nombre": "Quito"
+      }
+    }
+  ]
