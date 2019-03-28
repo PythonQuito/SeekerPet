@@ -38,3 +38,13 @@ class MascotaUpdate(generic.UpdateView):
     def form_valid(self, form):
         mascota = form.save(commit=False)
         return super().form_valid(form)
+
+
+class MascotaDetail(generic.DetailView):
+    template_name = 'mascotas/detallede_mascota.html'
+    model = models.Mascota
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx['sigue_perdida'] = ctx.get('mascota').esta_perdida
+        return ctx

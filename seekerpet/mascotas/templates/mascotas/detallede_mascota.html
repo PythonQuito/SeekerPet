@@ -1,0 +1,50 @@
+{% extends 'home.html'%}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row" style="margin-top: 5px">
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/media/{{ mascota.imagen }}" style="max-height: 300px" alt="{{ mascota.nombre }}">
+                    <span class="card-title">{{ mascota.nombre }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="{%url 'mascotas:actualizar_mascota' mascota.pk %}">{{ mascota.nombre }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="row"><a href="{%url 'mascotas:actualizar_mascota' mascota.pk %}">{{ mascota.nombre }}</a></div>
+            <div class=row>
+                <div class="input-field col s12">
+                    <input disabled value="{{mascota.fecha_perdida}}" id="id_fecha_perdida" type="text"
+                        class="validate">
+                    <label for="id_fecha_perdida">Me perdi el</label>
+                </div>
+                <div class="input-field col s12">
+                    <input disabled value="{{mascota.lugar_perdida}}" id="id_lugar_perdida" type="text"
+                        class="validate">
+                    <label for="id_lugar_perdida">Cerca de: </label>
+                </div>
+                <div class="input-field col s12">
+                    <input disabled value="{{mascota.descripcion}}" id="id_descripcion" type="text" class="validate">
+                    <label for="id_descripcion">Soy: </label>
+                </div>
+            </div>
+            <div class="row">
+                <a class="btn waves-effect light-blue" href="{% url 'mascotas:listade_mascotas' %}">Regresar</a>
+                {% if sigue_perdida %}
+                <a class="btn waves-effect light-blue" id="encontre_mascota">La
+                    encontre</a>
+                {% endif %}
+                <a class="btn waves-effect light-blue" id="necesito_informacion">La
+                    he visto</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

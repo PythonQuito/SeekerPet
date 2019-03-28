@@ -19,7 +19,7 @@
                 <span class="card-title">{{ mascota.nombre }}</span>
             </div>
             <div class="card-action">
-                <a href="#">{{ mascota.nombre }}</a>
+                <a href="{%url 'mascotas:detalle_mascota' mascota.pk %}">{{ mascota.nombre }}</a>
             </div>
         </div>
     </div>

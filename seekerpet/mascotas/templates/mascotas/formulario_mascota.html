@@ -35,10 +35,11 @@
                         <label for="id_fecha_perdida">Fecha perdida</label>
                     </div>
                 </div>
-
+                {% if form.instance.pk %}
+                <a class="btn waves-effect light-blue" href="{% url 'mascotas:detalle_mascota' form.instance.pk %}">Cancelar</a>
+                {% else %}
                 <a class="btn waves-effect light-blue" href="{% url 'mascotas:listade_mascotas' %}">Cancelar</a>
-
-
+                {% endif%}
                 <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
                     <i class="material-icons right">send</i>
                 </button>
