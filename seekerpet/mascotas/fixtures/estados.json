@@ -1,0 +1,26 @@
+[
+  {
+    "model": "mascotas.estado",
+    "pk": 1,
+    "fields": {
+      "codigo": "001",
+      "nombre": "Perdida"
+    }
+  },
+  {
+    "model": "mascotas.estado",
+    "pk": 2,
+    "fields": {
+      "codigo": "002",
+      "nombre": "Encontrada"
+    }
+  },
+  {
+    "model": "mascotas.estado",
+    "pk": 3,
+    "fields": {
+      "codigo": "003",
+      "nombre": "Sin solución"
+    }
+  }
+]
