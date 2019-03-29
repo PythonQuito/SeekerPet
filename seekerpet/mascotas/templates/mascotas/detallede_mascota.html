@@ -35,7 +35,7 @@
             </div>
             <div class="row">
                 <a class="btn waves-effect light-blue" href="{% url 'mascotas:listade_mascotas' %}">Regresar</a>
-                {% if sigue_perdida %}
+                {% if sigue_perdida and mascota.propietario == request.user %}
                 <a class="btn waves-effect light-blue" id="encontre_mascota">La
                     encontre</a>
                 {% endif %}
@@ -47,4 +47,21 @@
     </div>
 </div>
 
+<embed data-url="{% url 'mascotas:info_mascota' mascota.pk %}" id="url_informacion">
+<embed data-url="{% url 'mascotas:mascota_encontrada' mascota.pk %}" id="marcar_mascota">
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Información</h4>
+        <div id="info_propieario"></div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'mascotas/js/mascotas.js' %}"></script>
 {% endblock %}

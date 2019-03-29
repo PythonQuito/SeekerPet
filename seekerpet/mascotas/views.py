@@ -48,3 +48,18 @@ class MascotaDetail(generic.DetailView):
         ctx = super().get_context_data(**kwargs)
         ctx['sigue_perdida'] = ctx.get('mascota').esta_perdida
         return ctx
+
+
+def info_mascota(request, pk):
+    template_name = 'mascotas/include/info_mascota.html'
+    context = dict()
+    mascota = models.Mascota.objects.get(pk=pk)
+    context.update(mascota.informacionde_propietario())
+    return render(request, template_name, context)
+
+
+def mascota_encontrada(request, pk):
+    mascota = models.Mascota.objects.get(pk=pk)
+    mascota.marcar_mascota_encontrada()
+    mascota.save()
+    return JsonResponse(dict(status='ok'))

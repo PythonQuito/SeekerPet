@@ -48,6 +48,11 @@ class Mascota(models.Model):
 
     def marcar_mascota_encontrada(self):
         self.estado = Estado.objects.encontrada()
+    
+    def informacionde_propietario(self):
+        informacion = dict()
+        informacion['propietario'] = self.propietario
+        return informacion
 
     def __str__(self):
         return str(self.nombre)
