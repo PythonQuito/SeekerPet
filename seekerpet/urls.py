@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('seekerpet.mascotas.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('seguridades/', include('seekerpet.seguridades.urls')),
 ]
 
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

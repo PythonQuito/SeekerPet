@@ -24,5 +24,13 @@ class Perfil(models.Model):
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'
 
+    @staticmethod
+    def crear_perfil(user, telefono, direccion, ciudad, **kwargs):
+        perfil = Perfil(
+            user=user, telefono=telefono, direccion=direccion, ciudad=ciudad
+        )
+        
+        return perfil
+
     def __str__(self):
         return str(self.user)
