@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+<div class="row">
+    <div class="row">
+        <div style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 15px;">
+            <form class="col s12" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.username }}
+                        <label for="id_username">Usuario</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form.password }}
+                        <label for="id_descripcion">Contraseña</label>
+                    </div>
+                </div>
+                <a class="btn waves-effect light-blue" href="{% url 'mascotas:listade_mascotas' %}">Cancelar</a>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

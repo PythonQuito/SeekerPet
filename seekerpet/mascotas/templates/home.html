@@ -14,9 +14,9 @@
             <a href="#" class="brand-logo">SeekerPet</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if request.user.is_authenticated %}
-                <li><a href="#">Salir</a></li>
+                <li><a href="{% url 'logout' %}">Salir</a></li>
                 {% else %}
-                <li><a href="#">Ingresar</a></li>
+                <li><a href="{% url 'login' %}">Ingresar</a></li>
                 {% endif %}
             </ul>
         </div>
