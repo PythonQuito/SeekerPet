@@ -6,5 +6,5 @@ app_name = 'seguridades'
 
 
 urlpatterns = [
-    path('registro', views.RegistroView.as_view(),name='registro_usuario')
+    path('registro', views.RegistroView.as_view(), name='registro_usuario')
 ]

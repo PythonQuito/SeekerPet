@@ -19,7 +19,6 @@ class RegistroForm(forms.ModelForm):
         self.fields['password'].widget = forms.PasswordInput()
         self.fields['ciudad'].queryset = models.Ciudad.objects.all()
 
-    
     def clean_telefono(self):
         if len(self.cleaned_data.get('telefono')) < 9:
             raise forms.ValidationError('Menor de 9 digitos')

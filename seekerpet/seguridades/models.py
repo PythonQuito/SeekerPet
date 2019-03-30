@@ -9,7 +9,7 @@ class Ciudad(models.Model):
     class Meta:
         verbose_name = 'Ciudad'
         verbose_name_plural = 'Ciudades'
-    
+
     def __str__(self):
         return str(self.nombre)
 
@@ -29,7 +29,7 @@ class Perfil(models.Model):
         perfil = Perfil(
             user=user, telefono=telefono, direccion=direccion, ciudad=ciudad
         )
-        
+
         return perfil
 
     def __str__(self):
