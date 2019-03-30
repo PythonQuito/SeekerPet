@@ -30,7 +30,7 @@ class Mascota(models.Model):
     class Meta:
         verbose_name = 'Mascota'
         verbose_name_plural = 'Mascotas'
-    
+
     def save(self, *args, **kwargs):
         if self.pk is None:
             code = '{}{}'.format(timezone.now().time(), self.nombre)
@@ -41,14 +41,14 @@ class Mascota(models.Model):
     @staticmethod
     def mostrar_mascotas_perdida():
         return Mascota.objects.filter(estado=Estado.objects.perdida()).order_by('-id')
-    
+
     @property
     def esta_perdida(self):
         return self.estado == Estado.objects.perdida()
 
     def marcar_mascota_encontrada(self):
         self.estado = Estado.objects.encontrada()
-    
+
     def informacionde_propietario(self):
         informacion = dict()
         informacion['propietario'] = self.propietario
